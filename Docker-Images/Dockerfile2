@@ -1,0 +1,2 @@
+FROM ubuntu_apache2:v1
+RUN echo "Overwrite" > /var/www/html/index.html

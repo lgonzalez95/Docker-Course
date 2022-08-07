@@ -1,0 +1,8 @@
+FROM sample_html:v5
+
+ENV webfile /var/www/html/test.html
+
+RUN \
+    echo "1" >> webfile && \
+    echo "2" >> webfile && \
+    echo "3" >> webfile
