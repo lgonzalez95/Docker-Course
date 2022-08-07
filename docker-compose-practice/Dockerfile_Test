@@ -1,0 +1,9 @@
+FROM ubuntu:20.04
+
+RUN apt update
+RUN apt -y upgrade
+RUN apt install software-properties-common -y
+RUN add-apt-repository ppa:deadsnakes/ppa
+RUN apt install python -y
+
+RUN mkdir /opt/test

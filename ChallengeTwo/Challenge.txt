@@ -1,0 +1,29 @@
+Hello!
+
+
+The idea of this article is that you solve the following problem using what you have learned.
+At work, you have a request to create a couple of containers. Find the details below:
+
+- A container with the Apache + php image created in the previous exercise with:
+* 50Mb RAM limits
+* You can only access the CPU 0
+* It must have two environment variables:
+    - ENV = dev
+    - VIRTUALIZATION = docker
+* The webserver must be accessible via port 5555 in the browser
+
+Solution: docker run -d -p 5555:80 --name limited-container -m "50mb" --cpuset-cpus 0 -e "ENV=dev" -e "VIRTUALIZATION=docker" challenge-two:v1
+
+- A container with the Apache + php image created in the previous application with:
+* 100Mb RAM limits
+* You can access CPU 0 and 1
+* You must have three environment variables:
+    - ENV = stg
+    - VIRTUALIZATION = docker
+    - TYPE = container
+* The webserver must be accessible via port 8181 in the browser
+
+You should check its operation by entering your localhost: 5555 and localhost: 8181
+Have fun!
+
+Solution: docker run -d -p 8181:80 --name limited-container-2 -m "100mb" --cpuset-cpus 0-1 -e "ENV=stg" -e "VIRTUALIZATION=docker" -e "TYPE=container" challenge-two:v1
